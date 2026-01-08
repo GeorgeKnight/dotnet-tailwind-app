@@ -4,7 +4,7 @@
 
 ## 🎯 Project Overview
 
-**Learning.Programing** is a comprehensive business application developed as part of an EY GitHub Workshop. The project demonstrates modern web development practices using ASP.NET Core Razor Pages with a focus on creating professional, enterprise-grade user interfaces and business functionality.
+**Learning.Programing** is a comprehensive business application developed as part of an DotNet Programming workshop. The project demonstrates modern web development practices using ASP.NET Core Razor Pages with a focus on creating professional, enterprise-grade user interfaces and business functionality.
 
 ## 🏗️ Architecture
 
@@ -222,7 +222,7 @@ This project demonstrates:
 
 ## 📄 License
 
-This project is created for educational purposes as part of the EY GitHub Workshop.
+This project is created for educational purposes as part of the DotNet Programming series.
 
 ---
 
