@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Horizontal Layout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-gray-200 relative z-50">
+        <!-- Top Header -->
+        <div class="bg-primary-700 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-10 text-sm">
+                    <div class="flex items-center space-x-6">
+                        <span class="flex items-center">
+                            <i class="fas fa-phone mr-2"></i>
+                            +1 (555) 123-4567
+                        </span>
+                        <span class="flex items-center">
+                            <i class="fas fa-envelope mr-2"></i>
+                            contact@company.com
+                        </span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <a href="#" class="hover:text-primary-200 transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="hover:text-primary-200 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="hover:text-primary-200 transition-colors">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <span class="border-l border-primary-600 pl-4 ml-4">
+                            <a href="#" class="hover:text-primary-200 transition-colors">Login</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Header -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center shadow-lg">
+                            <i class="fas fa-rocket text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h1 class="text-2xl font-bold text-gray-900">Enterprise Pro</h1>
+                            <p class="text-xs text-gray-500 font-medium">Professional Solutions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="hidden lg:flex items-center space-x-6">
+                    <!-- Home -->
+                    <a href="#" class="text-gray-900 hover:text-primary-600 font-medium transition-colors">Home</a>
+
+                    <!-- Services Dropdown -->
+                    <div class="relative group">
+                        <button class="flex items-center text-gray-900 hover:text-primary-600 font-medium transition-colors">
+                            Services
+                            <i class="fas fa-chevron-down ml-1 text-xs group-hover:rotate-180 transition-transform duration-200"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-52 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <div class="py-2">
+                                <a href="#" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors">
+                                    <i class="fas fa-code mr-3 text-primary-500"></i>
+                                    <div>
+                                        <div class="font-medium">Web Development</div>
+                                        <div class="text-sm text-gray-500">Custom web solutions</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors">
+                                    <i class="fas fa-mobile-alt mr-3 text-primary-500"></i>
+                                    <div>
+                                        <div class="font-medium">Mobile Apps</div>
+                                        <div class="text-sm text-gray-500">iOS & Android development</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors">
+                                    <i class="fas fa-cloud mr-3 text-primary-500"></i>
+                                    <div>
+                                        <div class="font-medium">Cloud Services</div>
+                                        <div class="text-sm text-gray-500">Scalable cloud solutions</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors">
+                                    <i class="fas fa-shield-alt mr-3 text-primary-500"></i>
+                                    <div>
+                                        <div class="font-medium">Cybersecurity</div>
+                                        <div class="text-sm text-gray-500">Security consulting</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Products Dropdown -->
+                    <div class="relative group">
+                        <button class="flex items-center text-gray-900 hover:text-primary-600 font-medium transition-colors">
+                            Products
+                            <i class="fas fa-chevron-down ml-1 text-xs group-hover:rotate-180 transition-transform duration-200"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <div class="p-3">
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900 mb-3">Enterprise</h4>
+                                        <a href="#" class="block py-2 text-gray-700 hover:text-primary-600 transition-colors">CRM Platform</a>
+                                        <a href="#" class="block py-2 text-gray-700 hover:text-primary-600 transition-colors">Analytics Suite</a>
+                                        <a href="#" class="block py-2 text-gray-700 hover:text-primary-600 transition-colors">Workflow Tools</a>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900 mb-3">Small Business</h4>
+                                        <a href="#" class="block py-2 text-gray-700 hover:text-primary-600 transition-colors">Starter Kit</a>
+                                        <a href="#" class="block py-2 text-gray-700 hover:text-primary-600 transition-colors">Essential Tools</a>
+                                        <a href="#" class="block py-2 text-gray-700 hover:text-primary-600 transition-colors">Growth Package</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Solutions Dropdown -->
+                    <div class="relative group">
+                        <button class="flex items-center text-gray-900 hover:text-primary-600 font-medium transition-colors">
+                            Solutions
+                            <i class="fas fa-chevron-down ml-1 text-xs group-hover:rotate-180 transition-transform duration-200"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-52 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <div class="py-2">
+                                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors">Digital Transformation</a>
+                                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors">Process Automation</a>
+                                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors">Data Integration</a>
+                                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors">Business Intelligence</a>
+                                <div class="border-t border-gray-200 mt-2 pt-2">
+                                    <a href="#" class="block px-4 py-2 text-primary-600 font-medium hover:bg-gray-50 transition-colors">View All Solutions →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resources Dropdown -->
+                    <div class="relative group">
+                        <button class="flex items-center text-gray-900 hover:text-primary-600 font-medium transition-colors">
+                            Resources
+                            <i class="fas fa-chevron-down ml-1 text-xs group-hover:rotate-180 transition-transform duration-200"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <div class="py-2">
+                                <a href="#" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors">
+                                    <i class="fas fa-book mr-3 text-gray-400"></i>
+                                    Documentation
+                                </a>
+                                <a href="#" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors">
+                                    <i class="fas fa-video mr-3 text-gray-400"></i>
+                                    Video Tutorials
+                                </a>
+                                <a href="#" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors">
+                                    <i class="fas fa-comments mr-3 text-gray-400"></i>
+                                    Community Forum
+                                </a>
+                                <a href="#" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors">
+                                    <i class="fas fa-headset mr-3 text-gray-400"></i>
+                                    Support Center
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- About -->
+                    <a href="#" class="text-gray-900 hover:text-primary-600 font-medium transition-colors">About</a>
+
+                    <!-- Contact -->
+                    <a href="#" class="text-gray-900 hover:text-primary-600 font-medium transition-colors">Contact</a>
+                </nav>
+
+                <!-- Right side: Search and CTA -->
+                <div class="flex items-center space-x-3">
+                    <!-- Search -->
+                    <div class="hidden md:block">
+                        <div class="relative">
+                            <input type="text" placeholder="Search..." 
+                                   class="w-48 pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                            <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <button class="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors font-medium">
+                        Get Started
+                    </button>
+
+                    <!-- Mobile menu button -->
+                    <button id="mobileMenuButton" class="lg:hidden text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t border-gray-200 hidden">
+            <nav class="px-4 py-6 space-y-4">
+                <a href="#" class="block text-gray-900 font-medium py-2">Home</a>
+                
+                <div>
+                    <button class="flex items-center justify-between w-full text-gray-900 font-medium py-2" onclick="toggleMobileSubmenu('services')">
+                        Services
+                        <i class="fas fa-chevron-down text-xs transition-transform" id="servicesChevron"></i>
+                    </button>
+                    <div id="servicesSubmenu" class="pl-4 mt-2 space-y-2 hidden">
+                        <a href="#" class="block text-gray-700 py-1">Web Development</a>
+                        <a href="#" class="block text-gray-700 py-1">Mobile Apps</a>
+                        <a href="#" class="block text-gray-700 py-1">Cloud Services</a>
+                        <a href="#" class="block text-gray-700 py-1">Cybersecurity</a>
+                    </div>
+                </div>
+
+                <div>
+                    <button class="flex items-center justify-between w-full text-gray-900 font-medium py-2" onclick="toggleMobileSubmenu('products')">
+                        Products
+                        <i class="fas fa-chevron-down text-xs transition-transform" id="productsChevron"></i>
+                    </button>
+                    <div id="productsSubmenu" class="pl-4 mt-2 space-y-2 hidden">
+                        <a href="#" class="block text-gray-700 py-1">CRM Platform</a>
+                        <a href="#" class="block text-gray-700 py-1">Analytics Suite</a>
+                        <a href="#" class="block text-gray-700 py-1">Starter Kit</a>
+                        <a href="#" class="block text-gray-700 py-1">Essential Tools</a>
+                    </div>
+                </div>
+
+                <div>
+                    <button class="flex items-center justify-between w-full text-gray-900 font-medium py-2" onclick="toggleMobileSubmenu('solutions')">
+                        Solutions
+                        <i class="fas fa-chevron-down text-xs transition-transform" id="solutionsChevron"></i>
+                    </button>
+                    <div id="solutionsSubmenu" class="pl-4 mt-2 space-y-2 hidden">
+                        <a href="#" class="block text-gray-700 py-1">Digital Transformation</a>
+                        <a href="#" class="block text-gray-700 py-1">Process Automation</a>
+                        <a href="#" class="block text-gray-700 py-1">Data Integration</a>
+                        <a href="#" class="block text-gray-700 py-1">Business Intelligence</a>
+                    </div>
+                </div>
+
+                <div>
+                    <button class="flex items-center justify-between w-full text-gray-900 font-medium py-2" onclick="toggleMobileSubmenu('resources')">
+                        Resources
+                        <i class="fas fa-chevron-down text-xs transition-transform" id="resourcesChevron"></i>
+                    </button>
+                    <div id="resourcesSubmenu" class="pl-4 mt-2 space-y-2 hidden">
+                        <a href="#" class="block text-gray-700 py-1">Documentation</a>
+                        <a href="#" class="block text-gray-700 py-1">Video Tutorials</a>
+                        <a href="#" class="block text-gray-700 py-1">Community Forum</a>
+                        <a href="#" class="block text-gray-700 py-1">Support Center</a>
+                    </div>
+                </div>
+
+                <a href="#" class="block text-gray-900 font-medium py-2">About</a>
+                <a href="#" class="block text-gray-900 font-medium py-2">Contact</a>
+                
+                <div class="pt-4 border-t border-gray-200">
+                    <button class="w-full bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors font-medium">
+                        Get Started
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-0">
+        <!-- Dashboard Container -->
+        <div class="bg-gray-50 min-h-screen">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                
+                <!-- Dashboard Header -->
+                <div class="mb-8">
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-900">Dashboard Overview</h1>
+                            <p class="text-gray-600 mt-1">Welcome back, John! Here's what's happening with your business today.</p>
+                        </div>
+                        <div class="mt-4 sm:mt-0 flex space-x-3">
+                            <select class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                                <option>Last 30 days</option>
+                                <option>Last 7 days</option>
+                                <option>Last 90 days</option>
+                                <option>This year</option>
+                            </select>
+                            <button class="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors font-medium">
+                                <i class="fas fa-download mr-2"></i>Export
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Metrics Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm font-medium uppercase tracking-wide">Total Revenue</p>
+                                <p class="text-3xl font-bold text-gray-900 mt-2">$124,532</p>
+                            </div>
+                            <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-dollar-sign text-green-600 text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex items-center">
+                            <span class="text-green-600 text-sm font-medium flex items-center">
+                                <i class="fas fa-arrow-up mr-1"></i>+12.5%
+                            </span>
+                            <span class="text-gray-500 text-sm ml-2">vs last month</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm font-medium uppercase tracking-wide">New Customers</p>
+                                <p class="text-3xl font-bold text-gray-900 mt-2">1,429</p>
+                            </div>
+                            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-users text-blue-600 text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex items-center">
+                            <span class="text-green-600 text-sm font-medium flex items-center">
+                                <i class="fas fa-arrow-up mr-1"></i>+8.2%
+                            </span>
+                            <span class="text-gray-500 text-sm ml-2">vs last month</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm font-medium uppercase tracking-wide">Orders</p>
+                                <p class="text-3xl font-bold text-gray-900 mt-2">3,247</p>
+                            </div>
+                            <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-shopping-cart text-purple-600 text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex items-center">
+                            <span class="text-red-600 text-sm font-medium flex items-center">
+                                <i class="fas fa-arrow-down mr-1"></i>-2.4%
+                            </span>
+                            <span class="text-gray-500 text-sm ml-2">vs last month</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm font-medium uppercase tracking-wide">Conversion Rate</p>
+                                <p class="text-3xl font-bold text-gray-900 mt-2">4.12%</p>
+                            </div>
+                            <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-chart-line text-orange-600 text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex items-center">
+                            <span class="text-green-600 text-sm font-medium flex items-center">
+                                <i class="fas fa-arrow-up mr-1"></i>+5.1%
+                            </span>
+                            <span class="text-gray-500 text-sm ml-2">vs last month</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts and Analytics Section -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                    <!-- Main Chart -->
+                    <div class="lg:col-span-2 bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Revenue Analytics</h3>
+                                <p class="text-gray-500 text-sm">Monthly revenue trends and projections</p>
+                            </div>
+                            <div class="flex space-x-2">
+                                <button class="px-3 py-1 bg-primary-100 text-primary-600 rounded-lg text-sm font-medium">Revenue</button>
+                                <button class="px-3 py-1 text-gray-500 hover:text-gray-700 rounded-lg text-sm">Orders</button>
+                                <button class="px-3 py-1 text-gray-500 hover:text-gray-700 rounded-lg text-sm">Customers</button>
+                            </div>
+                        </div>
+                        <div class="h-80 bg-gray-50 rounded-xl flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="fas fa-chart-area text-4xl text-gray-400 mb-3"></i>
+                                <p class="text-gray-500 font-medium">Revenue Chart Visualization</p>
+                                <p class="text-gray-400 text-sm">Interactive chart would be displayed here</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Top Products -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900">Top Products</h3>
+                            <button class="text-primary-600 hover:text-primary-700 text-sm font-medium">View all</button>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-laptop text-blue-600"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900">Pro Laptop</p>
+                                        <p class="text-sm text-gray-500">Electronics</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-semibold text-gray-900">$1,299</p>
+                                    <p class="text-sm text-green-600">+15%</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-headphones text-green-600"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900">Wireless Headphones</p>
+                                        <p class="text-sm text-gray-500">Audio</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-semibold text-gray-900">$299</p>
+                                    <p class="text-sm text-green-600">+8%</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-mobile-alt text-purple-600"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900">Smartphone Case</p>
+                                        <p class="text-sm text-gray-500">Accessories</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-semibold text-gray-900">$49</p>
+                                    <p class="text-sm text-red-600">-3%</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-watch text-orange-600"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900">Smart Watch</p>
+                                        <p class="text-sm text-gray-500">Wearables</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-semibold text-gray-900">$399</p>
+                                    <p class="text-sm text-green-600">+22%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity & Data Table Section -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                    <!-- Recent Activity -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900">Recent Activity</h3>
+                            <button class="text-primary-600 hover:text-primary-700 text-sm font-medium">View all</button>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mt-1">
+                                    <i class="fas fa-check text-green-600 text-xs"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-gray-900">New order received from Sarah Johnson</p>
+                                    <p class="text-xs text-gray-500">Order #ORD-2026-001 • $299.00</p>
+                                    <p class="text-xs text-gray-400">2 minutes ago</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mt-1">
+                                    <i class="fas fa-user-plus text-blue-600 text-xs"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-gray-900">New customer registration</p>
+                                    <p class="text-xs text-gray-500">Michael Rodriguez joined the platform</p>
+                                    <p class="text-xs text-gray-400">15 minutes ago</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mt-1">
+                                    <i class="fas fa-truck text-orange-600 text-xs"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-gray-900">Order shipped</p>
+                                    <p class="text-xs text-gray-500">Order #ORD-2026-095 en route to customer</p>
+                                    <p class="text-xs text-gray-400">1 hour ago</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mt-1">
+                                    <i class="fas fa-star text-purple-600 text-xs"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-gray-900">New 5-star review received</p>
+                                    <p class="text-xs text-gray-500">Customer loved the Pro Laptop quality</p>
+                                    <p class="text-xs text-gray-400">2 hours ago</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mt-1">
+                                    <i class="fas fa-exclamation-triangle text-red-600 text-xs"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-gray-900">Low stock alert</p>
+                                    <p class="text-xs text-gray-500">Wireless Headphones: only 5 units left</p>
+                                    <p class="text-xs text-gray-400">3 hours ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900">Performance Metrics</h3>
+                            <button class="text-primary-600 hover:text-primary-700 text-sm font-medium">
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-sm font-medium text-gray-700">Sales Target</span>
+                                    <span class="text-sm font-semibold text-gray-900">78%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-primary-600 h-2 rounded-full" style="width: 78%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-sm font-medium text-gray-700">Customer Satisfaction</span>
+                                    <span class="text-sm font-semibold text-gray-900">92%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-green-500 h-2 rounded-full" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-sm font-medium text-gray-700">Inventory Turnover</span>
+                                    <span class="text-sm font-semibold text-gray-900">65%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-orange-500 h-2 rounded-full" style="width: 65%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-sm font-medium text-gray-700">Support Response</span>
+                                    <span class="text-sm font-semibold text-gray-900">88%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-purple-500 h-2 rounded-full" style="width: 88%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 pt-6 border-t border-gray-200">
+                            <div class="grid grid-cols-2 gap-4 text-center">
+                                <div>
+                                    <p class="text-2xl font-bold text-gray-900">99.2%</p>
+                                    <p class="text-xs text-gray-500 uppercase tracking-wide">Uptime</p>
+                                </div>
+                                <div>
+                                    <p class="text-2xl font-bold text-gray-900">24/7</p>
+                                    <p class="text-xs text-gray-500 uppercase tracking-wide">Support</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Table -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="px-6 py-4 border-b border-gray-200">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Recent Orders</h3>
+                                <p class="text-sm text-gray-500 mt-1">Manage and track your recent customer orders</p>
+                            </div>
+                            <div class="mt-3 sm:mt-0 flex space-x-2">
+                                <button class="text-gray-400 hover:text-gray-600">
+                                    <i class="fas fa-filter"></i>
+                                </button>
+                                <button class="text-gray-400 hover:text-gray-600">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                                <button class="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors text-sm font-medium">
+                                    <i class="fas fa-plus mr-2"></i>Add Order
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Order ID</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Product</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                                    <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-primary-600">#ORD-001</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="w-8 h-8 bg-gray-300 rounded-full mr-3"></div>
+                                            <div>
+                                                <div class="text-sm font-medium text-gray-900">Sarah Johnson</div>
+                                                <div class="text-sm text-gray-500">sarah@email.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Pro Laptop</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Delivered</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">$1,299.00</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Jan 8, 2026</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                        <button class="text-primary-600 hover:text-primary-900 mr-3">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="text-gray-400 hover:text-gray-600">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-primary-600">#ORD-002</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="w-8 h-8 bg-gray-300 rounded-full mr-3"></div>
+                                            <div>
+                                                <div class="text-sm font-medium text-gray-900">Michael Rodriguez</div>
+                                                <div class="text-sm text-gray-500">michael@email.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Wireless Headphones</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">Processing</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">$299.00</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Jan 7, 2026</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                        <button class="text-primary-600 hover:text-primary-900 mr-3">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="text-gray-400 hover:text-gray-600">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-primary-600">#ORD-003</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="w-8 h-8 bg-gray-300 rounded-full mr-3"></div>
+                                            <div>
+                                                <div class="text-sm font-medium text-gray-900">Emily Chen</div>
+                                                <div class="text-sm text-gray-500">emily@email.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Smart Watch</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800">Pending</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">$399.00</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Jan 6, 2026</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                        <button class="text-primary-600 hover:text-primary-900 mr-3">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="text-gray-400 hover:text-gray-600">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="px-6 py-3 bg-gray-50 border-t border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <p class="text-sm text-gray-500">Showing 1 to 3 of 47 results</p>
+                            <div class="flex space-x-2">
+                                <button class="px-3 py-1 border border-gray-300 rounded text-sm text-gray-500 hover:text-gray-700">Previous</button>
+                                <button class="px-3 py-1 bg-primary-600 text-white rounded text-sm">1</button>
+                                <button class="px-3 py-1 border border-gray-300 rounded text-sm text-gray-500 hover:text-gray-700">2</button>
+                                <button class="px-3 py-1 border border-gray-300 rounded text-sm text-gray-500 hover:text-gray-700">3</button>
+                                <button class="px-3 py-1 border border-gray-300 rounded text-sm text-gray-500 hover:text-gray-700">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-rocket text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Enterprise Pro</h3>
+                            <p class="text-gray-400 text-sm">Professional Solutions</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Transforming businesses with innovative technology solutions and professional services.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Web Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Mobile Apps</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cloud Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cybersecurity</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Press</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">
+                        Stay updated with our latest news and product releases.
+                    </p>
+                    <div class="flex">
+                        <input type="email" placeholder="Enter your email" 
+                               class="flex-1 px-4 py-2 rounded-l-lg bg-gray-800 border border-gray-700 focus:border-primary-500 focus:outline-none">
+                        <button class="bg-primary-600 px-4 py-2 rounded-r-lg hover:bg-primary-700 transition-colors">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between">
+                <p class="text-gray-400">© 2026 Enterprise Pro. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Mobile submenu toggle
+        function toggleMobileSubmenu(submenuName) {
+            const submenu = document.getElementById(submenuName + 'Submenu');
+            const chevron = document.getElementById(submenuName + 'Chevron');
+            
+            submenu.classList.toggle('hidden');
+            chevron.classList.toggle('rotate-180');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // Close mobile menu on window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

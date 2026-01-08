@@ -1,0 +1,92 @@
+@{
+    var currentPage = ViewContext.RouteData.Values["page"]?.ToString();
+    var isHomePage = currentPage == "/Index" || string.IsNullOrEmpty(currentPage);
+    var isSalesOrdersPage = currentPage?.StartsWith("/SalesOrders") == true;
+}
+<!-- Sidebar -->
+<aside id="sidebar"
+    class="fixed left-0 top-0 bottom-0 w-64 bg-white shadow-lg transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out z-40">
+    <nav class="h-full flex flex-col">
+        <!-- Brand Section -->
+        <div class="px-6 py-4 shadow-sm border-b border-gray-200">
+            <div class="flex items-center space-x-3 h-full">
+                <div
+                    class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center shadow-lg">
+                    <i class="fas fa-bolt text-white text-lg"></i>
+                </div>
+                <div>
+                    <h2 class="text-lg font-bold text-gray-900">Dashboard Pro</h2>
+                    <p class="text-xs text-gray-500 font-medium">Professional Suite</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <div class="flex-1 px-4 py-6 space-y-1">
+            <a asp-page="/Index"
+                class="@(isHomePage ? "bg-primary-50 border-r-4 border-primary-600 text-primary-700" : "text-gray-700 hover:bg-gray-50") group flex items-center px-3 py-2 text-sm font-medium @(isHomePage ? "rounded-l-lg" : "rounded-lg") transition-colors">
+                <i class="fas fa-home mr-3 @(isHomePage ? "text-primary-600" : "text-gray-500")"></i>
+                Dashboard
+            </a>
+
+            <a asp-page="/SalesOrders/Index"
+                class="@(isSalesOrdersPage ? "bg-primary-50 border-r-4 border-primary-600 text-primary-700" : "text-gray-700 hover:bg-gray-50") group flex items-center px-3 py-2 text-sm font-medium @(isSalesOrdersPage ? "rounded-l-lg" : "rounded-lg") transition-colors">
+                <i class="fas fa-shopping-cart mr-3 @(isSalesOrdersPage ? "text-primary-600" : "text-gray-500")"></i>
+                Sales Orders
+            </a>
+
+            <a href="#"
+                class="text-gray-700 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-colors">
+                <i class="fas fa-chart-bar mr-3 text-gray-500"></i>
+                Analytics
+            </a>
+
+            <a href="#"
+                class="text-gray-700 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-colors">
+                <i class="fas fa-users mr-3 text-gray-500"></i>
+                Team
+            </a>
+
+            <a href="#"
+                class="text-gray-700 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-colors">
+                <i class="fas fa-folder mr-3 text-gray-500"></i>
+                Projects
+            </a>
+
+            <a href="#"
+                class="text-gray-700 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-colors">
+                <i class="fas fa-calendar mr-3 text-gray-500"></i>
+                Calendar
+            </a>
+
+            <a href="#"
+                class="text-gray-700 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-colors">
+                <i class="fas fa-file-alt mr-3 text-gray-500"></i>
+                Documents
+            </a>
+
+            <a href="#"
+                class="text-gray-700 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-colors">
+                <i class="fas fa-chart-pie mr-3 text-gray-500"></i>
+                Reports
+            </a>
+        </div>
+
+        <!-- Settings section -->
+        <div class="px-4 py-4 border-t border-gray-200">
+            <a href="#"
+                class="text-gray-700 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-colors">
+                <i class="fas fa-cog mr-3 text-gray-500"></i>
+                Settings
+            </a>
+            <a href="#"
+                class="text-gray-700 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-colors">
+                <i class="fas fa-question-circle mr-3 text-gray-500"></i>
+                Help
+            </a>
+        </div>
+    </nav>
+</aside>
+
+<!-- Sidebar overlay for mobile -->
+<div id="sidebarOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden hidden"></div>

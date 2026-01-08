@@ -1,0 +1,525 @@
+﻿@page
+@model Learning.Programing.Frontend.Pages.SalesOrders.IndexModel
+@{
+    ViewData["Title"] = "Sales Orders";
+}
+
+<div class="px-6 py-8">
+
+    <!-- Page Header -->
+    <div class="mb-8">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+            <div>
+                <h1 class="text-3xl font-bold text-gray-900">Sales Orders</h1>
+                <p class="text-gray-600 mt-1">Manage and track all your sales orders in one place</p>
+            </div>
+            <div class="mt-4 sm:mt-0 flex space-x-3">
+                <button
+                    class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    <i class="fas fa-download mr-2"></i>
+                    Export
+                </button>
+                <a asp-page="/SalesOrders/New"
+                    class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 text-sm font-medium">
+                    <i class="fas fa-plus mr-2"></i>
+                    New Order
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Key Metrics -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-gray-500 text-sm font-medium uppercase tracking-wide">Total Orders</p>
+                    <p class="text-2xl font-bold text-gray-900 mt-1">1,247</p>
+                </div>
+                <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                    <i class="fas fa-shopping-cart text-blue-600"></i>
+                </div>
+            </div>
+            <div class="mt-4 flex items-center">
+                <span class="text-green-600 text-sm font-medium flex items-center">
+                    <i class="fas fa-arrow-up mr-1"></i>+12%
+                </span>
+                <span class="text-gray-500 text-sm ml-2">vs last month</span>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-gray-500 text-sm font-medium uppercase tracking-wide">Total Revenue</p>
+                    <p class="text-2xl font-bold text-gray-900 mt-1">$324,567</p>
+                </div>
+                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+                    <i class="fas fa-dollar-sign text-green-600"></i>
+                </div>
+            </div>
+            <div class="mt-4 flex items-center">
+                <span class="text-green-600 text-sm font-medium flex items-center">
+                    <i class="fas fa-arrow-up mr-1"></i>+18%
+                </span>
+                <span class="text-gray-500 text-sm ml-2">vs last month</span>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-gray-500 text-sm font-medium uppercase tracking-wide">Pending Orders</p>
+                    <p class="text-2xl font-bold text-gray-900 mt-1">89</p>
+                </div>
+                <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center">
+                    <i class="fas fa-clock text-yellow-600"></i>
+                </div>
+            </div>
+            <div class="mt-4 flex items-center">
+                <span class="text-red-600 text-sm font-medium flex items-center">
+                    <i class="fas fa-arrow-down mr-1"></i>-5%
+                </span>
+                <span class="text-gray-500 text-sm ml-2">vs last month</span>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-gray-500 text-sm font-medium uppercase tracking-wide">Avg Order Value</p>
+                    <p class="text-2xl font-bold text-gray-900 mt-1">$260</p>
+                </div>
+                <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                    <i class="fas fa-chart-line text-purple-600"></i>
+                </div>
+            </div>
+            <div class="mt-4 flex items-center">
+                <span class="text-green-600 text-sm font-medium flex items-center">
+                    <i class="fas fa-arrow-up mr-1"></i>+3%
+                </span>
+                <span class="text-gray-500 text-sm ml-2">vs last month</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filters and Search -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- Search -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Search Orders</label>
+                <div class="relative">
+                    <input type="text" placeholder="Order ID, customer name..."
+                        class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                </div>
+            </div>
+
+            <!-- Date Range -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Date Range</label>
+                <select
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <option>Last 30 days</option>
+                    <option>Last 7 days</option>
+                    <option>Last 90 days</option>
+                    <option>This year</option>
+                    <option>Custom range</option>
+                </select>
+            </div>
+
+            <!-- Status Filter -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Status</label>
+                <select
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <option>All Status</option>
+                    <option>Pending</option>
+                    <option>Processing</option>
+                    <option>Shipped</option>
+                    <option>Delivered</option>
+                    <option>Cancelled</option>
+                </select>
+            </div>
+
+            <!-- Customer Filter -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Customer</label>
+                <select
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <option>All Customers</option>
+                    <option>Acme Corp</option>
+                    <option>Globex Inc</option>
+                    <option>Soylent Co</option>
+                    <option>Initech LLC</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Filter Actions -->
+        <div class="mt-4 flex flex-col sm:flex-row sm:justify-between sm:items-center">
+            <div class="flex space-x-2 mb-4 sm:mb-0">
+                <button
+                    class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 text-sm font-medium">
+                    <i class="fas fa-search mr-2"></i>
+                    Apply Filters
+                </button>
+                <button
+                    class="inline-flex items-center px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 text-sm font-medium">
+                    <i class="fas fa-undo mr-2"></i>
+                    Reset
+                </button>
+            </div>
+            <div class="text-sm text-gray-500">
+                Showing 25 of 1,247 orders
+            </div>
+        </div>
+    </div>
+
+    <!-- Orders Table -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+        <div class="px-6 py-4 border-b border-gray-200">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                    <h2 class="text-lg font-semibold text-gray-900">Recent Sales Orders</h2>
+                    <p class="text-sm text-gray-500 mt-1">Track and manage all sales orders</p>
+                </div>
+                <div class="mt-3 sm:mt-0 flex items-center space-x-3">
+                    <div class="flex items-center space-x-2">
+                        <span class="text-sm text-gray-500">View:</span>
+                        <button class="p-1 text-gray-400 hover:text-gray-600">
+                            <i class="fas fa-th-list"></i>
+                        </button>
+                        <button class="p-1 text-gray-400 hover:text-gray-600">
+                            <i class="fas fa-th"></i>
+                        </button>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-sm text-gray-500">Sort:</span>
+                        <select class="text-sm border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500">
+                            <option>Date (Newest)</option>
+                            <option>Date (Oldest)</option>
+                            <option>Amount (High to Low)</option>
+                            <option>Amount (Low to High)</option>
+                            <option>Customer A-Z</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            <input type="checkbox"
+                                class="rounded border-gray-300 text-blue-600 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200">
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Order
+                            ID</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Customer</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Products</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Status</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total
+                        </th>
+                        <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    <!-- Sample Row 1 -->
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <input type="checkbox"
+                                class="rounded border-gray-300 text-blue-600 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200">
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm font-medium text-blue-600 hover:text-blue-800 cursor-pointer">
+                                SO-2026-001</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-gray-300 rounded-full mr-3 flex items-center justify-center">
+                                    <span class="text-sm font-medium text-gray-600">AC</span>
+                                </div>
+                                <div>
+                                    <div class="text-sm font-medium text-gray-900">Acme Corp</div>
+                                    <div class="text-sm text-gray-500">john@acmecorp.com</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm text-gray-900">Pro Laptop, Wireless Mouse</div>
+                            <div class="text-sm text-gray-500">2 items</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <span
+                                class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">
+                                Delivered
+                            </span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm text-gray-900">Jan 8, 2026</div>
+                            <div class="text-sm text-gray-500">10:30 AM</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm font-semibold text-gray-900">$1,349.00</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-2">
+                            <button class="text-blue-600 hover:text-blue-900" title="View Details">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="text-green-600 hover:text-green-900" title="Edit">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="text-red-600 hover:text-red-900" title="Delete">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <!-- Sample Row 2 -->
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <input type="checkbox"
+                                class="rounded border-gray-300 text-blue-600 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200">
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm font-medium text-blue-600 hover:text-blue-800 cursor-pointer">
+                                SO-2026-002</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-gray-300 rounded-full mr-3 flex items-center justify-center">
+                                    <span class="text-sm font-medium text-gray-600">GI</span>
+                                </div>
+                                <div>
+                                    <div class="text-sm font-medium text-gray-900">Globex Inc</div>
+                                    <div class="text-sm text-gray-500">info@globex.com</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm text-gray-900">Office Chair, Desk Lamp</div>
+                            <div class="text-sm text-gray-500">2 items</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <span
+                                class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">
+                                Processing
+                            </span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm text-gray-900">Jan 7, 2026</div>
+                            <div class="text-sm text-gray-500">2:45 PM</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm font-semibold text-gray-900">$495.00</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-2">
+                            <button class="text-blue-600 hover:text-blue-900" title="View Details">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="text-green-600 hover:text-green-900" title="Edit">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="text-red-600 hover:text-red-900" title="Delete">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <!-- Sample Row 3 -->
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <input type="checkbox"
+                                class="rounded border-gray-300 text-blue-600 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200">
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm font-medium text-blue-600 hover:text-blue-800 cursor-pointer">
+                                SO-2026-003</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-gray-300 rounded-full mr-3 flex items-center justify-center">
+                                    <span class="text-sm font-medium text-gray-600">SC</span>
+                                </div>
+                                <div>
+                                    <div class="text-sm font-medium text-gray-900">Soylent Co</div>
+                                    <div class="text-sm text-gray-500">orders@soylent.com</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm text-gray-900">Standing Desk, Monitor Stand</div>
+                            <div class="text-sm text-gray-500">2 items</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <span
+                                class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                                Pending
+                            </span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm text-gray-900">Jan 6, 2026</div>
+                            <div class="text-sm text-gray-500">11:15 AM</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm font-semibold text-gray-900">$2,150.00</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-2">
+                            <button class="text-blue-600 hover:text-blue-900" title="View Details">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="text-green-600 hover:text-green-900" title="Edit">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="text-red-600 hover:text-red-900" title="Delete">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <!-- Sample Row 4 -->
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <input type="checkbox"
+                                class="rounded border-gray-300 text-blue-600 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200">
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm font-medium text-blue-600 hover:text-blue-800 cursor-pointer">
+                                SO-2026-004</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-gray-300 rounded-full mr-3 flex items-center justify-center">
+                                    <span class="text-sm font-medium text-gray-600">IL</span>
+                                </div>
+                                <div>
+                                    <div class="text-sm font-medium text-gray-900">Initech LLC</div>
+                                    <div class="text-sm text-gray-500">billing@initech.com</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm text-gray-900">Wireless Headphones</div>
+                            <div class="text-sm text-gray-500">1 item</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <span
+                                class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-orange-100 text-orange-800">
+                                Shipped
+                            </span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm text-gray-900">Jan 5, 2026</div>
+                            <div class="text-sm text-gray-500">4:20 PM</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm font-semibold text-gray-900">$299.00</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-2">
+                            <button class="text-blue-600 hover:text-blue-900" title="View Details">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="text-green-600 hover:text-green-900" title="Edit">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="text-red-600 hover:text-red-900" title="Delete">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Table Footer with Pagination -->
+        <div class="px-6 py-3 bg-gray-50 border-t border-gray-200">
+            <div class="flex flex-col sm:flex-row items-center justify-between">
+                <div class="flex items-center space-x-2 mb-4 sm:mb-0">
+                    <span class="text-sm text-gray-500">Show</span>
+                    <select class="border-gray-300 rounded text-sm focus:ring-blue-500 focus:border-blue-500">
+                        <option>10</option>
+                        <option selected>25</option>
+                        <option>50</option>
+                        <option>100</option>
+                    </select>
+                    <span class="text-sm text-gray-500">orders per page</span>
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <p class="text-sm text-gray-500 mr-4">Showing 1 to 25 of 1,247 results</p>
+                    <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px">
+                        <button
+                            class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button
+                            class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+                            1
+                        </button>
+                        <button
+                            class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-blue-50 text-sm font-medium text-blue-600">
+                            2
+                        </button>
+                        <button
+                            class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+                            3
+                        </button>
+                        <span
+                            class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700">
+                            ...
+                        </span>
+                        <button
+                            class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+                            50
+                        </button>
+                        <button
+                            class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bulk Actions (shown when items are selected) -->
+    <div id="bulkActions"
+        class="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white rounded-lg shadow-lg px-6 py-4 hidden">
+        <div class="flex items-center space-x-4">
+            <span class="text-sm font-medium">3 orders selected</span>
+            <div class="flex space-x-2">
+                <button
+                    class="inline-flex items-center px-3 py-1.5 bg-blue-600 rounded text-sm font-medium hover:bg-blue-700">
+                    <i class="fas fa-eye mr-2"></i>
+                    View
+                </button>
+                <button
+                    class="inline-flex items-center px-3 py-1.5 bg-green-600 rounded text-sm font-medium hover:bg-green-700">
+                    <i class="fas fa-check mr-2"></i>
+                    Mark as Shipped
+                </button>
+                <button
+                    class="inline-flex items-center px-3 py-1.5 bg-red-600 rounded text-sm font-medium hover:bg-red-700">
+                    <i class="fas fa-trash mr-2"></i>
+                    Delete
+                </button>
+            </div>
+            <button class="text-gray-400 hover:text-white">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Add some basic JavaScript for interactivity -->
+<script src="~/js/sales-orders/index.js"></script>
