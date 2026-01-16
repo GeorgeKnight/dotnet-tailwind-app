@@ -65,6 +65,57 @@ Before running this application, ensure you have the following installed:
 - [Visual Studio 2022](https://visualstudio.microsoft.com/) or [VS Code](https://code.visualstudio.com/)
 - [Git](https://git-scm.com/)
 
+## 🎯 Tailwind Integration
+- **Initialize NPM and install Tailwind CSS**
+  ```bash
+  npm init -y
+  npm install -D tailwindcss@latest @tailwindcss/cli@latest
+  ```
+
+- **Configure content paths:**
+  ```javascript
+  /** @type {import('tailwindcss').Config} */
+  module.exports = {
+    content: [
+      './Pages/**/*.cshtml',
+      './Views/**/*.cshtml',
+      './**/*.razor', // For Blazor projects
+      './wwwroot/**/*.html',
+    ],
+    theme: {
+      extend: {},
+    },
+    plugins: [],
+  };
+  ```
+
+- **Add Tailwind directives to your CSS:** Create an input CSS file (e.g., wwwroot/css/site.css) and add the @import directives:
+  ```css
+  @import "tailwindcss";
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  ```
+
+- **Add build scripts to `package.json`**
+  ```json
+  "scripts": {
+    "css:build": "npx @tailwindcss/cli -i ./wwwroot/css/site.css -o ./wwwroot/css/styles.css --minify",
+    "css:watch": "npx @tailwindcss/cli -i ./wwwroot/css/site.css -o ./wwwroot/css/styles.css --watch"
+  }
+  ```
+- **Link the output CSS in your layout:**
+  ```html
+  <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+  ```
+
+- **Run the watch process:**
+  ```bash
+  npm run css:watch
+  dotnet watch run
+  ```
+  
 ## 🚦 Getting Started
 
 ### 1. Clone the Repository
